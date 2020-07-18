@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/row_elektro"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/elektro_foto1"
+        app:srcCompat="@drawable/foto"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/elektro_nama1"
+        android:text="Title"
+        android:textSize="17dp"
+        android:textColor="#043353"
+        android:fontFamily="@font/centurygothic_bold"
+        android:layout_toRightOf="@+id/elektro_foto1"
+        android:layout_toEndOf="@+id/elektro_foto1"
+        android:layout_marginStart="20dp"
+        />
+
+    <TextView
+        android:id="@+id/elektro_prodi1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/elektro_nama1"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/elektro_foto1"
+        android:layout_toRightOf="@+id/elektro_foto1"
+        android:fontFamily="@font/centurygothic_regular"
+        android:text="Deskripsi"
+        android:textColor="#043353"
+        android:textSize="12dp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
