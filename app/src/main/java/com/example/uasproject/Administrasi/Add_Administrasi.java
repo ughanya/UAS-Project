@@ -1,4 +1,4 @@
-package com.example.uasproject.Sipil;
+package com.example.uasproject.Administrasi;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,9 +13,9 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.uasproject.MainActivity;
 import com.example.uasproject.R;
 import com.example.uasproject.Request;
+import com.example.uasproject.Sipil.Add_Sipil;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -29,9 +29,9 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
-public class Add_Sipil extends AppCompatActivity {
+public class Add_Administrasi extends AppCompatActivity {
 
-    private ImageView fotoSipil;
+    private ImageView fotoAdministrasi;
     private Uri filePath;
 
     ProgressBar progressBar;
@@ -42,27 +42,27 @@ public class Add_Sipil extends AppCompatActivity {
 
     private String mahasiswaId;
 
-    private Button btn_simpanSipil;
+    private Button btn_simpanAdministrasi;
 
-    private EditText nimSipil, namaSipil, prodiSipil, telpSipil;
+    private EditText nimAdministrasi, namaAdministrasi, prodiAdministrasi, telpAdministrasi;
 
     @Override
     protected void onCreate( Bundle savedInstanceState ) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add__sipil);
+        setContentView(R.layout.activity_add__administrasi);
 
         database = FirebaseDatabase.getInstance().getReference();
         penyimpanan = FirebaseStorage.getInstance().getReference();
 
         mahasiswaId = database.push().getKey();
 
-        nimSipil = findViewById(R.id.et_nim);
-        namaSipil = findViewById(R.id.et_nama);
-        prodiSipil = findViewById(R.id.et_prodi);
-        telpSipil = findViewById(R.id.et_telp);
-        fotoSipil = findViewById(R.id.btn_foto);
+        nimAdministrasi = findViewById(R.id.et_nim);
+        namaAdministrasi = findViewById(R.id.et_nama);
+        prodiAdministrasi = findViewById(R.id.et_prodi);
+        telpAdministrasi = findViewById(R.id.et_telp);
+        fotoAdministrasi = findViewById(R.id.btn_foto);
 
-        btn_simpanSipil = findViewById(R.id.btn_simpanSipil);
+        btn_simpanAdministrasi = findViewById(R.id.btn_simpanAdministrasi);
 
         progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(View.INVISIBLE);
@@ -70,17 +70,17 @@ public class Add_Sipil extends AppCompatActivity {
         findViewById(R.id.btn_foto).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick( View view ) {
-                Add_Sipil.this.tampilGalery();
+                Add_Administrasi.this.tampilGalery();
             }
         });
 
-        findViewById(R.id.btn_simpanSipil).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_simpanAdministrasi).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick( View view ) {
 
                 progressBar.setProgress(0);
                 progressBar.setVisibility(View.INVISIBLE);
-                Add_Sipil.this.simpanFoto();
+                Add_Administrasi.this.simpanFoto();
 
             }
         });
@@ -91,9 +91,9 @@ public class Add_Sipil extends AppCompatActivity {
 
         if(filePath != null){
 
-            String imageName = nimSipil.getText().toString();
+            String imageName = nimAdministrasi.getText().toString();
 
-            final StorageReference ref = penyimpanan.child("imagesSipil/"+imageName+".jpg");
+            final StorageReference ref = penyimpanan.child("imagesAdministrasi/"+imageName+".jpg");
 
             UploadTask uploadTask = ref.putFile(filePath);
 
@@ -104,7 +104,7 @@ public class Add_Sipil extends AppCompatActivity {
                         throw task.getException();
                     }
 
-//mengambil url dari foto yang diupload
+                    //mengambil url dari foto yang diupload
                     return ref.getDownloadUrl();
                 }
             }).addOnCompleteListener(new OnCompleteListener<Uri>() {
@@ -141,8 +141,8 @@ public class Add_Sipil extends AppCompatActivity {
                 }
             });
         }
-    }
 
+    }
 
     private void tampilGalery() {
 
@@ -150,6 +150,7 @@ public class Add_Sipil extends AppCompatActivity {
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Pilih Foto"), 1);
+
     }
 
     @Override
@@ -160,7 +161,7 @@ public class Add_Sipil extends AppCompatActivity {
 
             filePath = data.getData();
 
-            Picasso.get().load(filePath).fit().into(fotoSipil);
+            Picasso.get().load(filePath).fit().into(fotoAdministrasi);
 
         } else{
             Toast.makeText(getApplicationContext(), "Silahkan Masukkan Foto", Toast.LENGTH_SHORT).show();
@@ -172,23 +173,24 @@ public class Add_Sipil extends AppCompatActivity {
     private void simpanData() {
 
         Request requests = new Request(mahasiswaId,
-                nimSipil.getText().toString(),
-                namaSipil.getText().toString(),
-                prodiSipil.getText().toString(),
-                telpSipil.getText().toString(),
+                nimAdministrasi.getText().toString(),
+                namaAdministrasi.getText().toString(),
+                prodiAdministrasi.getText().toString(),
+                telpAdministrasi.getText().toString(),
                 storageUrl);
 
-        database.child("Sipil")
+        database.child("Administrasi")
                 .push()
                 .setValue(requests).addOnSuccessListener(this, new OnSuccessListener() {
             @Override
             public void onSuccess( Object aVoid ) {
 
-                Toast.makeText(Add_Sipil.this, "Data Berhasil Ditambahkan",
+                Toast.makeText(Add_Administrasi.this, "Data Berhasil Ditambahkan",
                         Toast.LENGTH_SHORT).show();
 
 
             }
         });
+
     }
 }

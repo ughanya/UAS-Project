@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuJurusan">
+
+    <View
+        android:id="@+id/bar_atas"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/bg_header_custom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="9dp"
+        android:fontFamily="@font/centurygothic_bold"
+        android:text="Jurusan"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bar_atas"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:fontFamily="@font/centurygothic_regular"
+        android:text="Silahkan Pilih Jurusan Untuk Melihat Data Mahasiswa Aktif"
+        android:textColor="#043353"
+        android:textSize="12dp" />
+
+    <TextView
+        android:id="@+id/btn_elektro"
+        android:layout_width="120dp"
+        android:layout_height="110dp"
+        android:layout_below="@+id/bar_atas"
+        android:layout_marginTop="65dp"
+        android:layout_marginLeft="65dp"
+        android:fontFamily="@font/centurygothic_bold"
+        android:text="Teknik Elektro"
+        android:textColor="#043353"
+        android:paddingTop="43dp"
+        android:textSize="14dp"
+        android:textAlignment="center"
+        android:background="@drawable/bg_btn_jurusan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/btn_sipil"
+        android:layout_width="120dp"
+        android:layout_height="110dp"
+        android:layout_below="@+id/bar_atas"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="65dp"
+        android:layout_toEndOf="@+id/btn_elektro"
+        android:layout_toRightOf="@+id/btn_elektro"
+        android:background="@drawable/bg_btn_jurusan"
+        android:fontFamily="@font/centurygothic_bold"
+        android:paddingTop="43dp"
+        android:text="Teknik Sipil"
+        android:textAlignment="center"
+        android:textColor="#043353"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/btn_mesin"
+        android:layout_width="120dp"
+        android:layout_height="110dp"
+        android:layout_below="@+id/btn_elektro"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/bg_btn_jurusan"
+        android:fontFamily="@font/centurygothic_bold"
+        android:paddingTop="43dp"
+        android:text="Teknik Mesin"
+        android:textAlignment="center"
+        android:textColor="#043353"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/btn_kimia"
+        android:layout_width="120dp"
+        android:layout_height="110dp"
+        android:layout_below="@+id/btn_sipil"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="35dp"
+        android:layout_toEndOf="@+id/btn_mesin"
+        android:layout_toRightOf="@+id/btn_mesin"
+        android:background="@drawable/bg_btn_jurusan"
+        android:fontFamily="@font/centurygothic_bold"
+        android:paddingTop="43dp"
+        android:text="Teknik Kimia"
+        android:textAlignment="center"
+        android:textColor="#043353"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/btn_administrasi"
+        android:layout_width="120dp"
+        android:layout_height="110dp"
+        android:layout_below="@+id/btn_mesin"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/bg_btn_jurusan"
+        android:fontFamily="@font/centurygothic_bold"
+        android:paddingTop="36dp"
+        android:text="Administrasi Niaga"
+        android:textAlignment="center"
+        android:textColor="#043353"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/btn_akuntansi"
+        android:layout_width="120dp"
+        android:layout_height="110dp"
+        android:layout_below="@+id/btn_kimia"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="35dp"
+        android:layout_toEndOf="@+id/btn_administrasi"
+        android:layout_toRightOf="@+id/btn_administrasi"
+        android:background="@drawable/bg_btn_jurusan"
+        android:fontFamily="@font/centurygothic_bold"
+        android:paddingTop="43dp"
+        android:text="Akuntansi"
+        android:textAlignment="center"
+        android:textColor="#043353"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+</RelativeLayout>

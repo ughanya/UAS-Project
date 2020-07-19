@@ -62,6 +62,15 @@ public class ListElektro extends AppCompatActivity {
         list_elektro.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         list_elektro.setHasFixedSize(true);
 
+        btn_homeElektro = findViewById(R.id.btn_homeElektro);
+
+        btn_homeElektro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick( View view ) {
+                startActivity(new Intent(getApplicationContext(), MenuJurusan.class));
+            }
+        });
+
         tmbh_dataelektro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick( View view ) {

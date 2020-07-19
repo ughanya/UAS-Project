@@ -9,10 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListElektro"></activity>
+        <activity android:name=".MenuJurusan"></activity>
+        <activity android:name=".Akuntansi.ListAkuntansi" />
+        <activity android:name=".Akuntansi.DetailAkuntansi" />
+        <activity android:name=".Administrasi.ListAdministrasi" />
+        <activity android:name=".Akuntansi.Add_Akuntansi" />
+        <activity android:name=".Administrasi.DetailAministrasi" />
+        <activity android:name=".Kimia.ListKimia" />
+        <activity android:name=".Administrasi.Add_Administrasi" />
+        <activity android:name=".Kimia.DetailKimia" />
+        <activity android:name=".Mesin.ListMesin" />
+        <activity android:name=".Kimia.Add_Kimia" />
+        <activity android:name=".Mesin.DetailMesin" />
+        <activity android:name=".Sipil.ListSipil" />
+        <activity android:name=".Mesin.Add_Mesin" />
+        <activity android:name=".Sipil.DetailSipil" />
+        <activity android:name=".Sipil.Add_Sipil" />
+        <activity android:name=".ListElektro" />
         <activity android:name=".DetailElektro" />
         <activity
-            android:name=".Sipil.Add_Sipil"
+            android:name=".Opening"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
